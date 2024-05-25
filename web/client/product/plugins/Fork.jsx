@@ -23,11 +23,12 @@ class ForkPlugin extends React.Component {
         src: "https://github.blog/wp-content/uploads/2008/12/forkme_left_green_007200.png?resize=149%2C149"
     }
     render() {
-        return (
-            <a href="https://github.com/geosolutions-it/MapStore2">
-                <img className="ms-fork-button" style={{position: "absolute", top: 40, left: 0, border: 0, zIndex: 100}} src={this.props.src} alt="Fork me on GitHub" />
-            </a>
-        );
+        // return (
+        //     <a href="https://github.com/geosolutions-it/MapStore2">
+        //         <img className="ms-fork-button" style={{position: "absolute", top: 40, left: 0, border: 0, zIndex: 100}} src={this.props.src} alt="Fork me on GitHub" />
+        //     </a>
+        // );
+        return false;
     }
 }
 

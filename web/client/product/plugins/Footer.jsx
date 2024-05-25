@@ -31,7 +31,8 @@ import {createPlugin} from "../../utils/PluginsUtils";
 class Footer extends React.Component {
 
     static propTypes = {
-        logo: PropTypes.object
+        logo: PropTypes.object,
+        show: PropTypes.bool
     };
 
     static defaultProps = {
@@ -42,11 +43,13 @@ class Footer extends React.Component {
             href: 'https://www.geosolutionsgroup.com/',
             title: 'GeoSolutions',
             alt: 'GeoSolutions'
-        }
+        },
+        show: false
     };
 
     render() {
         const { href, ...logo } = this.props.logo || {};
+        const { show } = this.props;
         const image = (
             <img
                 src={logo.src}
@@ -55,7 +58,7 @@ class Footer extends React.Component {
                 title={logo.title || ''}
                 alt={logo.alt || ''} />
         );
-        return (
+        return show ? (
             <Grid>
                 {logo && logo.src && <Row>
                     <Col xs={12} className="text-center">
@@ -72,7 +75,7 @@ class Footer extends React.Component {
                     </Col>
                 </Row>
             </Grid>
-        );
+        ) : false;
     }
 }
 
